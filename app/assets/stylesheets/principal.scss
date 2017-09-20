@@ -1,3 +1,57 @@
 // Place all the styles related to the Principal controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.home-form {
+  width: 400px;
+  margin: auto;
+}
+
+.home-title {
+  text-align: center;
+  border-bottom: 2px solid ;
+  border-color: #147BCC;
+  color: #147BCC;
+  letter-spacing: 5px;
+  width: 480px;
+  margin: auto;
+}
+
+.home-subtitle {
+  text-align: center;
+  letter-spacing: 5px;
+  margin-bottom: 30px;
+  color: #147BCC;
+}
+
+.home-structure{
+  background-color: white;
+  width: 500px;
+  height:510px;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.body-div {
+  background-image: asset-url('home-image.png');
+  background-size: cover;
+  position: fixed;
+  top: 0px; 
+  left: 0px; 
+  bottom: 0px; 
+  right: 0px;
+}
+
+.div-caduceus {
+  display: flex;
+  width: 400px;
+  margin: auto;
+  padding-top: 35px;
+}
+
+.img-caduceus {
+  width:150px; 
+  height:150px; 
+  margin:auto;
+}
