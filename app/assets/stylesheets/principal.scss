@@ -24,18 +24,18 @@
   color: #147BCC;
 }
 
-.home-structure{
-  background-color: white;
-  width: 500px;
-  height:510px;
-  margin: auto;
-  position: absolute;
-  top: 0; left: 0; bottom: 0; right: 0;
+.home-structure-outer {
+    position: relative;
+    height: 600px;
 }
 
-body {
-  background-image: asset-url('home-image.png');
-  background-size: cover;
+.home-structure-inner{
+  width: 500px;
+  height:510px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: auto;
 }
 
 .div-caduceus {

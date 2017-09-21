@@ -27,6 +27,8 @@ gem 'bootstrap-sass', '3.3.7'
 gem 'hirb', '0.7.3'
 # Use bcrypy for secure passwords.
 gem 'bcrypt', '~> 3.1.7'
+# Use Font Awesome sass gem for adding icons
+gem 'font-awesome-sass', '4.6.2'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
