@@ -23,7 +23,7 @@
 $main-color: #636363;
 
 
-h1, h2, h3, h4, h5, p {
+h1, h2, h3, h4, h5, p, small {
     font-family: 'Muli', sans-serif;
 }
 
@@ -45,17 +45,11 @@ body {
   background-repeat: no-repeat;
 }
 
-.banner {
-  background-color: #636363;
-  color: white;
-  width: 600px;
+.error-messages {
+  position: absolute;
+  width: 80%;
+  margin-left: 10%;
   text-align: center;
-  letter-spacing: 5px;
-  margin: auto;
-  margin-top: -20px;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  border-radius: 5px;
 }
 
 
@@ -72,9 +66,9 @@ body {
   min-height: 100%;
   height: auto;
   /* Negative indent footer by its height */
-  margin: 0 auto -40px;
+  margin: 0 auto -45px;
   /* Pad bottom by footer height */
-  padding: 0 0 40px;
+  padding: 0 0 45px;
 }
 
 /* Set the fixed height of the footer here */
@@ -82,7 +76,7 @@ body {
   border-top: 1px solid #3B3066;
   padding-top: 10px;
   color: #777;
-  height: 40px;
+  height: 45px;
   margin: auto;
 }
 
