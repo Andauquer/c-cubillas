@@ -1,7 +1,13 @@
 class AdminsController < ApplicationController
   
+  before_action :verificar_bd, only: [:new]
+  
   def new
     @admin = Admin.new
+  end
+  
+  def edit
+  
   end
   
   def create
@@ -22,6 +28,12 @@ class AdminsController < ApplicationController
 
   def admin_params
     params.require(:admin).permit(:email, :password)
+  end
+  
+  def verificar_bd
+    if Admin.count == 1 
+      render 'edit'
+    end
   end
 
 end
