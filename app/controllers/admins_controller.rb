@@ -6,10 +6,6 @@ class AdminsController < ApplicationController
     @admin = Admin.new
   end
   
-  def edit
-  
-  end
-  
   def create
     @admin = Admin.new(admin_params)
     if @admin.save
@@ -20,12 +16,6 @@ class AdminsController < ApplicationController
     end
   end
   
-  def show
-
-  end
-
-  private
-
   def admin_params
     params.require(:admin).permit(:email, :password)
   end
