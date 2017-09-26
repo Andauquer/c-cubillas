@@ -25,6 +25,10 @@ class Admin < ActiveRecord::Base
     BCrypt::Password.create(string, cost: cost)
   end
   
+  def password_reset_expired?
+    reset_sent_at < 2.hours.ago
+  end
+  
   private
   # Creates and assigns the activation token and digest.
   def create_activation_digest
