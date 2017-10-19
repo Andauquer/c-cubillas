@@ -2,6 +2,8 @@
   <h1>Reseteo de Contraseña</h1>
 </div>
 
+<%= render 'shared/errors', obj: @admin %>
+
 <div class="row">
   <div class="col-sm-4 col-sm-offset-4 well">
     <%= form_for(@admin, url: password_reset_path(params[:id])) do |f| %>

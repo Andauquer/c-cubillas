@@ -23,14 +23,16 @@ class PasswordResetsController < ApplicationController
   end
   
   def update
-    if params[:admin][:password].empty?                  # Case (3)
-      @admin.errors.add(:password, "No puede estar vacio")
+    if params[:admin][:password].empty?                 
+      @admin.errors.add(:base, "No se ingreso ninguna contraseña")
       render 'edit'
-    elsif @admin.update_attributes(admin_params)          # Case (4)
+    elsif params[:admin][:password] != params[:admin][:password_confirmation]
+      @admin.errors.add(:base, "Las contraseñas ingresadas no son iguales.")
+      render 'edit'  
+    else      
+      @admin.update_attributes(admin_params)
       flash[:success] = "La contraseña se ha reseteado."
       redirect_to root_path
-    else
-      render 'edit'                                     # Case (2)
     end
   end
   

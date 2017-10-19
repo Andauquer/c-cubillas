@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
   get 'password_resets/new'
-
   get 'password_resets/edit'
 
-  get 'tablero', to: 'principal#show'
   get 'credenciales', to: 'admins#new'
   get 'home', to: 'admins#show'
   resources :admins
