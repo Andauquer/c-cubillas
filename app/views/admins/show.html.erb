@@ -1,0 +1,39 @@
+<%= render 'layouts/navbar' %>
+
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <div class="home-title">
+      <h1>Clinica Medica Familiar</h1>
+    </div>
+    
+    <div class="home-subtitle">
+      <h3>Dr. Cubillas</h3>
+    </div>
+  </div>
+ </div>
+ 
+<div class="row">
+  <div class="col-sm-4 col-sm-offset-2">
+    <div class="thumbnail">
+      <%= image_tag ("pacientes.jpeg"), :class => "thumbnail_image" %>
+      <div class="caption">
+        <h3>Control de Pacientes</h3>
+        <p>Desde aqui puede llevar el control de sus pacientes mediantes diversas funcionalidades,
+           como ser el listado de ellos, creacion de un nuevo expediente, busqueda por nombre, etc.</p>
+        <p><%= link_to 'Ingresar', credenciales_path, class: "btn btn-md btn-primary" %></p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-sm-4">
+    <div class="thumbnail">
+      <%= image_tag ("citas.jpg"), :class => "thumbnail_image"  %>
+      <div class="caption">
+        <h3>Control de Citas</h3>
+        <p>Vea el historial completo de las citas de sus pacientes o cree un nuevo registro para 
+            algun paciente, podra acceder a estas y otras opciones desde el siguiente boton.</p>
+        <p><%= link_to 'Ingresar', credenciales_path, class: "btn btn-md btn-primary" %></p>
+      </div>
+    </div>
+  </div>
+</div>

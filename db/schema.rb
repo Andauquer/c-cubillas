@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170925215507) do
+ActiveRecord::Schema.define(version: 20171020003711) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,20 @@ ActiveRecord::Schema.define(version: 20170925215507) do
     t.string   "password_digest"
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
+  end
+
+  create_table "patients", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "age"
+    t.string   "address"
+    t.string   "email"
+    t.string   "home_number"
+    t.string   "phone_numer"
+    t.string   "blood_type"
+    t.string   "annotations"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

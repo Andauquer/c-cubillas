@@ -12,13 +12,20 @@
 }
 
 .title-page {
+  text-align: center;
+  border-bottom: 2px solid ;
+  border-color: #94CAE4;
   color: #94CAE4;
+  letter-spacing: 5px;
+  width: 680px;
+  margin: auto;
 }
 
 .advertencia {
+   text-align: center;
+  letter-spacing: 5px;
+  margin-bottom: 30px;
   color: #94CAE4;
-  margin-top: 15px;
-  margin-bottom: 25px;
 }
 
 .panel-cambiar-credenciales {
