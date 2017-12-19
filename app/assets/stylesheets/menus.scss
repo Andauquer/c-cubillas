@@ -1,0 +1,21 @@
+.bs-callout {
+  padding: 10px;
+  margin: 20px 0;
+  border: 1px solid #eee;
+  border-left-width: 5px;
+  border-radius: 3px;
+  border-left-color: #1b809e;
+  
+  h4 {
+    color: #1b809e;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  p {
+    margin-bottom: 5px;
+    margin-left: 5px;
+  }
+}
