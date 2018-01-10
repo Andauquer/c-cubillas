@@ -42,6 +42,7 @@ class PatientsController < ApplicationController
       flash[:success] = "La informacion del paciente ha sido registrada."
       redirect_to home_path
     else
+      flash[:danger] = @patient.errors.full_messages.join(", ")
       render 'new'
     end
   end

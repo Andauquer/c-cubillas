@@ -11,6 +11,6 @@ class Patient < ActiveRecord::Base
   validates :last_name, presence: true, length: { minimum: 3, maximum: 25 }
   validates :age, presence: true
   validates :address, length: {maximum: 80}
-  validates :annotations, length: {maximum: 250}
+  validates :annotations, length: {maximum: 400}
   
 end

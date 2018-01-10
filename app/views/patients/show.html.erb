@@ -10,51 +10,51 @@
 
 <div class="well col-xs-8 col-xs-offset-2">
   
+  
   <h3 class="nombre_paciente" align="center">
     <%= @patient.first_name + " " + @patient.last_name %>
   </h3>
   
-  <h4>
-    <%= "Edad:" %>
-    <%= @patient.age %>
-  </h4>
-
-  <h4>
-    <%= "Direccion:" %>
-    <%= @patient.address %>
-  </h4>
+  <dl class="dl-horizontal">
+    <dt><%= "Edad:" %></dt>
+    <dd><%= @patient.age %></dd>
+  </dl>
   
-  <h4>
-    <%= "Correo Electronico:" %>
-    <%= @patient.email %>
-  </h4>
+  <dl class="dl-horizontal">
+    <dt><%= "Direccion:" %></dt>
+    <dd><%= @patient.address %></dd>
+  </dl>
   
-  <h4>
-    <%= "Telefono Fijo:" %>
-    <%= @patient.home_number %>
-  </h4>
+  <dl class="dl-horizontal">
+    <dt><%= "Correo electronico:" %></dt>
+    <dd><%= @patient.email %></dd>
+  </dl>
   
-  <h4>
-    <%= "Telefono Movil:" %>
-    <%= @patient.phone_numer %>
-  </h4>
+  <dl class="dl-horizontal">
+    <dt><%= "Telefono fijo:" %></dt>
+    <dd><%= @patient.home_number %></dd>
+  </dl>
   
-   <h4>
-    <%= "Tipo de Sangre:" %>
-    <%= @patient.blood_type %>
-  </h4>
+  <dl class="dl-horizontal">
+    <dt><%= "Telefono movil:" %></dt>
+    <dd><%= @patient.phone_numer %></dd>
+  </dl>
   
-  <div class="row">
-    <div class="col-sm-2" >
-      <h4>
-        <%= "Anotaciones:" %>
-      </h4>
-    </div
-    <div class="col-sm-8" >
-       <h4>
-         <%= @patient.annotations %>
-       </h4>
-    </div
+  <dl class="dl-horizontal">
+    <dt><%= "Tipo de sangre" %></dt>
+    <dd><%= @patient.blood_type %></dd>
+  </dl>
+  
+  <dl class="dl-horizontal">
+    <dt><%= "Anotaciones:" %></dt>
+    <dd><%= @patient.annotations %></dd>
+  </dl>
+  
+  <div class="patient-actions">
+    <%= link_to 'Editar', edit_patient_path(@patient), class: "btn btn-xs btn-primary" %>
+    <%= link_to 'Eliminar', patient_path(@patient), method: :delete, 
+                                       data: { confirm: "¿Esta seguro que desea eliminar el registro de este paciente?" }, 
+                                       class: "btn btn-xs btn-danger"  %>
   </div>
   
 </div>
