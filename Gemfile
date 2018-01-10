@@ -32,6 +32,9 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'font-awesome-sass', '4.6.2'
 # For emails management
 gem 'sendgrid-ruby'
+# For pagination
+gem 'will_paginate', '3.0.7'
+gem 'bootstrap-will_paginate', '0.0.10'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

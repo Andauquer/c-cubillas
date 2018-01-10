@@ -1,1 +1,47 @@
 <%= render 'layouts/navbar' %>
+
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <div class="title-page">
+      <h2>Menu de Citas</h2>
+    </div>
+  </div>
+ </div>
+
+<div class="row paneles">
+  <div class="col-sm-4">
+    <div class="thumbnail">
+      <%= image_tag ("search_patient.jpg"), :class => "thumbnail_image" %>
+      <div class="caption">
+        <h3>Buscar Cita</h3>
+        <p>Desde aqui puede llevar el control de sus pacientes mediantes diversas funcionalidades,
+           como ser el listado de ellos, creacion de un nuevo expediente, busqueda por nombre, etc.</p>
+        <p><%= link_to 'Pacientes', menu_pacientes_path, class: "btn btn-md btn-primary" %></p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-sm-4">
+    <div class="thumbnail">
+      <%= image_tag ("register_patient.jpg"), :class => "thumbnail_image"  %>
+      <div class="caption">
+        <h3>Registrar Cita</h3>
+        <p>Vea el historial completo de las citas de sus pacientes o cree un nuevo registro para 
+            algun paciente, podra acceder a estas y otras opciones desde el siguiente boton.</p>
+        <p><%= link_to 'Citas', menu_citas_path, class: "btn btn-md btn-primary" %></p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-sm-4">
+    <div class="thumbnail">
+      <%= image_tag ("patients.png"), :class => "thumbnail_image"  %>
+      <div class="caption">
+        <h3>Listar Citas</h3>
+        <p>Vea el historial completo de las citas de sus pacientes o cree un nuevo registro para 
+            algun paciente, podra acceder a estas y otras opciones desde el siguiente boton.</p>
+        <p><%= link_to 'Citas', menu_citas_path, class: "btn btn-md btn-primary" %></p>
+      </div>
+    </div>
+  </div>
+</div>

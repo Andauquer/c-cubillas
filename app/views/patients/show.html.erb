@@ -1,0 +1,60 @@
+<%= render 'layouts/navbar' %>
+
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <div class="title-page titulo-lista-de-pacientes">
+      <h2>Ficha Medica</h2>
+    </div>
+  </div>
+</div>
+
+<div class="well col-xs-8 col-xs-offset-2">
+  
+  <h3 class="nombre_paciente" align="center">
+    <%= @patient.first_name + " " + @patient.last_name %>
+  </h3>
+  
+  <h4>
+    <%= "Edad:" %>
+    <%= @patient.age %>
+  </h4>
+
+  <h4>
+    <%= "Direccion:" %>
+    <%= @patient.address %>
+  </h4>
+  
+  <h4>
+    <%= "Correo Electronico:" %>
+    <%= @patient.email %>
+  </h4>
+  
+  <h4>
+    <%= "Telefono Fijo:" %>
+    <%= @patient.home_number %>
+  </h4>
+  
+  <h4>
+    <%= "Telefono Movil:" %>
+    <%= @patient.phone_numer %>
+  </h4>
+  
+   <h4>
+    <%= "Tipo de Sangre:" %>
+    <%= @patient.blood_type %>
+  </h4>
+  
+  <div class="row">
+    <div class="col-sm-2" >
+      <h4>
+        <%= "Anotaciones:" %>
+      </h4>
+    </div
+    <div class="col-sm-8" >
+       <h4>
+         <%= @patient.annotations %>
+       </h4>
+    </div
+  </div>
+  
+</div>

@@ -1,0 +1,110 @@
+<%= render 'layouts/navbar' %>
+
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <div class="title-page">
+      <h2>Registrar Paciente</h2>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <%= form_for(@patient, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+    
+      <div class="form-group">
+        <div class="control-label col-sm-3">
+          <%= f.label :nombre %>
+        </div>
+        <div class="col-sm-7">
+            <%= f.text_field :first_name, class: "form-control", placeholder: "Ingresar nombre.", autofocus: true %>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="control-label col-sm-3">
+          <%= f.label :apellido %>
+        </div>
+        <div class="col-sm-7">
+            <%= f.text_field :last_name, class: "form-control", placeholder: "Ingresar apellido." %>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="control-label col-sm-3">
+          <%= f.label :edad %>
+        </div>
+        <div class="col-sm-7">
+            <%= f.number_field :age, class: "form-control", placeholder: "Ingresar edad." %>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="control-label col-sm-3">
+          <%= f.label :direccion %>
+        </div>
+        <div class="col-sm-7">
+            <%= f.text_field :address, class: "form-control", placeholder: "Ingresar direccion." %>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="control-label col-sm-3">
+          <%= f.label :correo_electronico %>
+        </div>
+        <div class="col-sm-7">
+          <%= f.email_field :email, class: "form-control", placeholder: "Ingresar correo electronico." %>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="control-label col-sm-3">
+          <%= f.label :telefono_fijo %>
+        </div>
+        <div class="col-sm-7">
+            <%= f.text_field :home_number, class: "form-control", placeholder: "Ingresar numero de telefono fijo." %>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="control-label col-sm-3">
+          <%= f.label :telefono_movil %>
+        </div>
+        <div class="col-sm-7">
+            <%= f.text_field :phone_numer, class: "form-control", placeholder: "Ingresar numero de telefono movil." %>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="control-label col-sm-3">
+          <%= f.label :tipo_de_sangre %>
+        </div>
+        <div class="col-sm-7">
+            <%= f.text_field :blood_type, class: "form-control", placeholder: "Ingresar el tipo de sangre." %>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="control-label col-sm-3">
+          <%= f.label :anotaciones %>
+        </div>
+        <div class="col-sm-7">
+            <%= f.text_area :annotations,  rows: 10, class: "form-control", placeholder: "Ingresar anotaciones del paciente." %>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-7">
+          <!-- Metodo de Ruby para distinguir si se esta haciendo el llamado a la creacion de un nuevo registro o no. -->
+          <%= f.submit(@patient.new_record? ? "Registrar" : "Update account", class: "btn btn-primary btn-lg") %>
+        </div>
+      </div>
+     
+    <% end %>
+    
+    <div class="col-sm-offset-3 col-sm-7">
+      [ <%= link_to 'Cancelar registro y volver al menu principal.', home_path %> ]
+    </div>
+    
+  </div>
+</div>
