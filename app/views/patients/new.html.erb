@@ -8,6 +8,17 @@
   </div>
 </div>
 
+<div class="errors-new-patient">
+  <% if @patient.errors.any? %>
+  <h2 class="errors-title"><strong><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Errores</strong><h2>
+    <ul>
+      <% @patient.errors.full_messages.each do |message| %>
+        <li class="errors-message"><%= message %></li>
+        <% end %>
+    </ul>
+  <% end %>
+</div>
+
 <div class="row">
   <div class="col-sm-8 col-sm-offset-2">
     <%= form_for(@patient, :html => {class: "form-horizontal", role: "form"}) do |f| %>
