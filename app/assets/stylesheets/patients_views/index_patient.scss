@@ -1,29 +1,19 @@
-.titulo-lista-de-pacientes {
+.tabla-buscar-pacientes {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px !important;
+}
+
+tr:nth-child(even) {
+    background-color: #94CAE4;
+}
+
+.barra-busqueda {
   margin-bottom: 30px;
-}
-
-.patient-name {
-  text-align: center;
-  letter-spacing: 5px;
-  width: 480px;
-  margin: auto;
-  font-size: 18px;
-  
-  a {
-    color: #32457F;
-  }
-  
-  a:hover {
-    color: #192240;
-  }
-}
-
-.patient-actions {
-  border-top: 2px solid #eaeaea;
-  padding-top: 5px;
-  text-align: center;
-}
-
-.paginacion-top .pagination {
-  margin-top: 0px;
 }

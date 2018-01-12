@@ -8,8 +8,10 @@ Rails.application.routes.draw do
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :patients
   
+  get 'listar_pacientes', to: 'patients#listar'
   get 'menu_pacientes', to: 'pages#patients_menu'
   get 'menu_citas', to: 'pages#dates_menu'
+  
   
   root 'sessions#new'
   post 'login', to: 'sessions#create'

@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   #Con este siguiente linea de comando, podemos usar estos metodos en nuestros views, de lo contrario, 
   #solo se podrian usar en los otros archivos controllers.
   helper_method :current_user, :logged_in?
-
+  
   def current_user
     @current_user ||= Admin.find(session[:user_id]) if session[:user_id]
   end

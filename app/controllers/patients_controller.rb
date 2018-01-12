@@ -1,14 +1,14 @@
 class PatientsController < ApplicationController
   
   before_action :require_user
-  
+
   def new
     @patient = Patient.new
   end
   
   def index
-    #De esta manera especificamos la paginacion en el muestro de articulos
-    @patients = Patient.paginate(page: params[:page], per_page: 3)
+    @q = Patient.ransack(params[:q])
+    @patients = @q.result
   end
   
   def show
@@ -46,6 +46,11 @@ class PatientsController < ApplicationController
     end
   end
   
+  def listar
+    #De esta manera especificamos la paginacion en el muestro de articulos
+    @patients = Patient.paginate(page: params[:page], per_page: 3)
+  end
+  
   private
   
   def patient_params
@@ -58,5 +63,5 @@ class PatientsController < ApplicationController
       render 'edit'
     end
   end
-
+  
 end
