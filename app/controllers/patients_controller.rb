@@ -8,7 +8,7 @@ class PatientsController < ApplicationController
   
   def index
     @q = Patient.ransack(params[:q])
-    @patients = @q.result
+    @patients = @q.result.paginate(page: params[:page], per_page: 8)
   end
   
   def show
