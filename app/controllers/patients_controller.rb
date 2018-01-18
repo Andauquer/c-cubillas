@@ -7,8 +7,16 @@ class PatientsController < ApplicationController
   end
   
   def index
-    @q = Patient.ransack(params[:q])
-    @patients = @q.result.paginate(page: params[:page], per_page: 8)
+    if params[:nombre].present?
+      @q = Patient.ransack(first_name_cont: params[:nombre], last_name_cont: params[:nombre], m: 'or')
+      @patients = @q.result.paginate(page: params[:page], per_page: 8)
+    elsif params[:commit].present?
+      @q = Patient.ransack(first_name_cont: params[:q][:first_name_cont], last_name_cont: params[:q][:first_name_cont], m: 'or')
+      @patients = @q.result.paginate(page: params[:page], per_page: 8)
+    else
+      @q = Patient.ransack(params[:q])
+      @patients = @q.result.paginate(page: params[:page], per_page: 8)
+    end
   end
   
   def show
