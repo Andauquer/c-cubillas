@@ -7,6 +7,10 @@ class PagesController < ApplicationController
   def dates_menu
 
   end
+  
+  def new_date_menu
+
+  end
 
 end
 

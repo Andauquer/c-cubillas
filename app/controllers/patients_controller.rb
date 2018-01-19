@@ -37,7 +37,7 @@ class PatientsController < ApplicationController
     @patient = Patient.new(patient_params)
     if @patient.save
       flash[:success] = "La informacion del paciente ha sido registrada."
-      redirect_to home_path
+      redirect_to patient_path(@patient)
     else
       render 'new'
     end
