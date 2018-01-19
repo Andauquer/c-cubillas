@@ -6,3 +6,7 @@ jQuery(document).ready(function($) {
     $('a[id="searchlink"]').attr("href","patients?nombre=" + word.toString());
    });
 });
+
+jQuery(document).ready(function($) {
+    $(".dropdown-toggle").dropdown();
+});
