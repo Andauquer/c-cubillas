@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :admins
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :patients
-  resources :citas
+  resources :appointments
   
   get 'listar_pacientes', to: 'patients#listar'
   get 'menu_pacientes', to: 'pages#patients_menu'

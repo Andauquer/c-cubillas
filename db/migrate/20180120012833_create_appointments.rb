@@ -1,6 +1,6 @@
-class CreateDates < ActiveRecord::Migration
+class CreateAppointments < ActiveRecord::Migration
   def change
-    create_table :dates do |t|
+    create_table :appointments do |t|
       t.string :symptoms
       t.string :medicines
       t.string :cares
