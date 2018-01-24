@@ -39,7 +39,9 @@
                   class:"btn btn-success btn-xs boton-cita", title: "Ver informacion de la cita" %>
             </td>
             <td><%= link_to patient.first_name + " " + patient.last_name, patient_path(patient) %></td>
-            <td><%= patient.created_at %></td>
+            <!-- Afortunadamente, patient.created_at se refiere a la fecha de la creacion de la cita y no de la
+                 creacion del paciente. -->
+            <td><%= patient.created_at   %></td>
           </tr>
         <% end %>
       </tbody>

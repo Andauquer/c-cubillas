@@ -15,7 +15,7 @@ class AppointmentsController < ApplicationController
   end
   
   def show
-    @appointment = (Appointment.find(params[:id])).joins("INNER JOIN patients ON patients.id = appointments.patient_id").select("patients.*, appointments.*")
+    @appointment = Appointment.find(params[:id])
   end
   
   def index
