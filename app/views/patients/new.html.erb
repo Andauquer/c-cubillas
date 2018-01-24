@@ -106,8 +106,12 @@
       
       <div class="form-group">
         <div class="col-sm-offset-3 col-sm-7">
-          <!-- Metodo de Ruby para distinguir si se esta haciendo el llamado a la creacion de un nuevo registro o no. -->
-          <%= f.submit(@patient.new_record? ? "Registrar" : "Actualizar", class: "btn btn-primary btn-lg") %>
+          <% if params[:new_appointment].present? %>
+            <%= f.hidden_field :new_appointment, :value => params[:new_appointment] %>
+            <%= f.submit("Guardar y Crear Cita", class: "btn btn-primary btn-lg") %>
+          <% else %>
+            <%= f.submit(@patient.new_record? ? "Registrar" : "Actualizar", class: "btn btn-primary btn-lg") %>
+          <% end %>
         </div>
       </div>
      

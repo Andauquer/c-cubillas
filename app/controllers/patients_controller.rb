@@ -34,12 +34,21 @@ class PatientsController < ApplicationController
   end
   
   def create
-    @patient = Patient.new(patient_params)
+    @patient = Patient.new(patient_params.except(:new_appointment))
     if @patient.save
       flash[:success] = "La informacion del paciente ha sido registrada."
-      redirect_to patient_path(@patient)
+      if patient_params[:new_appointment].present?
+        redirect_to new_appointment_path(patient: @patient.id)
+      else
+        redirect_to patient_path(@patient)
+      end
     else
-      render 'new'
+      if patient_params[:new_appointment].present?
+        params[:new_appointment] = true
+        render 'new'
+      else
+        render 'new'
+      end
     end
   end
   
@@ -62,7 +71,7 @@ class PatientsController < ApplicationController
   private
   
   def patient_params
-    params.require(:patient).permit(:first_name, :last_name, :age, :address, :email, :home_number, :phone_numer, :blood_type, :annotations)
+    params.require(:patient).permit(:first_name, :last_name, :age, :address, :email, :home_number, :phone_numer, :blood_type, :annotations, :new_appointment)
   end
   
   def verificar_bd

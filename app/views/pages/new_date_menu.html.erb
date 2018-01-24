@@ -20,7 +20,7 @@
   
   <div class="bs-callout bs-callout-danger" id="callout-glyphicons-dont-mix"> 
     <h4>
-      Nuevo Paciente
+      <%= link_to '<i class="fa fa-angle-right" aria-hidden="true"></i> Nuevo Paciente'.html_safe, new_patient_path(new_appointment: true) %>
     </h4> 
    <p>Elija esta opcion si desea crear una cita para una persona que aun no se encuentra
        ingresado en el registro de pacientes de la clinica. Por lo que primero se 

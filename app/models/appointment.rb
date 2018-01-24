@@ -6,5 +6,6 @@ class Appointment < ActiveRecord::Base
   validates :medicines, length: {maximum: 200}
   validates :cares, length: {maximum: 200}
   validates :annotations, length: {maximum: 400}
+  validates :patient_id, presence: true
   
 end

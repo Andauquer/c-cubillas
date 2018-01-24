@@ -1,0 +1,45 @@
+<%= render 'layouts/navbar' %>
+
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <div class="title-page titulo-lista-de-pacientes">
+      <h2>Informacion de la Cita</h2>
+    </div>
+  </div>
+</div>
+
+<div class="well col-xs-8 col-xs-offset-2">
+  
+  <dl class="dl-horizontal">
+    <dt><%= "Fecha de la cita:" %></dt>
+    <dd><%= @appointment.created_at %></dd>
+  </dl>
+  
+  <dl class="dl-horizontal">
+    <dt><%= "Sintomas Detectados:" %></dt>
+    <dd><%= @appointment.symptoms %></dd>
+  </dl>
+  
+  <dl class="dl-horizontal">
+    <dt><%= "Medicinas Recetadas:" %></dt>
+    <dd><%= @appointment.medicines %></dd>
+  </dl>
+  
+  <dl class="dl-horizontal">
+    <dt><%= "Cuidados Recetados:" %></dt>
+    <dd><%= @appointment.cares %></dd>
+  </dl>
+  
+  <dl class="dl-horizontal">
+    <dt><%= "Anotaciones:" %></dt>
+    <dd><%= @appointment.annotations %></dd>
+  </dl>
+  
+  <div class="patient-actions">
+    <%= link_to 'Editar', edit_appointment_path(@appointment), class: "btn btn-xs btn-primary" %>
+    <%= link_to 'Eliminar', appointment_path(@appointment), method: :delete, 
+                                       data: { confirm: "¿Esta seguro que desea eliminar el registro de esta cita?" }, 
+                                       class: "btn btn-xs btn-danger"  %>
+  </div>
+  
+</div>

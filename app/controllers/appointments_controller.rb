@@ -15,7 +15,20 @@ class AppointmentsController < ApplicationController
   end
   
   def show
+    @appointment = (Appointment.find(params[:id])).joins("INNER JOIN patients ON patients.id = appointments.patient_id").select("patients.*, appointments.*")
+  end
+  
+  def index
+    @q = Patient.ransack(params[:q])
+    @q.sorts = 'created_at desc' if @q.sorts.empty?
+    @patients = @q.result.joins("INNER JOIN appointments ON patients.id = appointments.patient_id").select("patients.*, appointments.*")
+  end
+  
+  def destroy
     @appointment = Appointment.find(params[:id])
+    @appointment.destroy
+    flash[:success] = "El registro de la cita fue eliminado."
+    redirect_to appointments_path
   end
   
   private

@@ -1,0 +1,49 @@
+<%= render 'layouts/navbar' %>
+
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <div class="title-page titulo-lista-de-pacientes">
+      <h2>Buscar Cita</h2>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    
+    <%= search_form_for @q, :url => url_for(:controller => 'appointments', :action => 'index') do |f| %>
+    
+      <div class="col-sm-6 col-sm-offset-2 barra-busqueda">
+        <%= f.search_field :first_name_cont, class: "form-control", placeholder: "Ingresar nombre del paciente.", autofocus: true %>
+      </div>
+      
+      <div class="col-sm-3">
+        <%= f.submit "Buscar",  class: "btn btn-primary btn-md" %>
+      </div> 
+        
+    <% end %>
+    
+    <table class="tabla-buscar-pacientes"  align="center">
+      <thead>
+        <tr>
+          <th class="columna-boton-cita"></th>
+          <th><%= sort_link(@q, :first_name, 'Nombre del Paciente', default_order: :desc) %></th>
+          <th><%= sort_link(@q, :created_at, 'Fecha de la Cita', default_order: :desc) %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @patients.each do |patient| %>
+          <tr>
+            <td class="columna-boton-cita">
+              <%= link_to '<i class="fa fa-eye" aria-hidden="true"></i>'.html_safe, appointment_path(patient), 
+                  class:"btn btn-success btn-xs boton-cita", title: "Ver informacion de la cita" %>
+            </td>
+            <td><%= link_to patient.first_name + " " + patient.last_name, patient_path(patient) %></td>
+            <td><%= patient.created_at %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    
+  </div>
+</div>
