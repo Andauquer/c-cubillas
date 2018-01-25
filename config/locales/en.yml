@@ -20,9 +20,32 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
-  
-en:
+  activerecord:
+    attributes:
+      patient:
+        first_name: ""
+        last_name: ""
+        age: ""
+        address: ""
+        annotations: ""
+    errors:
+      models:
+        patient:
+          attributes:
+            first_name:
+              blank: "El nombre no puede quedar en blanco."
+              too_short: "El nombre debe tener al menos 3 caracteres."
+              too_long: "El nombre no puede ser mas largo de 25 caracteres."
+            last_name:
+              blank: "El apellido no puede quedar en blanco." 
+              too_short: "El apellido debe tener al menos 3 caracteres."
+              too_long: "El apellido no puede ser mas largo de 25 caracteres."
+            age:
+              blank: "La edad no puede quedar en blanco."
+            address:
+              too_long: "El direccion no puede ser mas larga de 80 caracteres."
+            annotations:
+              too_long: "Las anotaciones no pueden tener mas de 400 caracteres."
   date:
     abbr_day_names:
     - dom
@@ -54,10 +77,6 @@ en:
     - jueves
     - viernes
     - sábado
-    formats:
-      default: "%-d/%-m/%Y"
-      long: "%-d de %B de %Y"
-      short: "%-d de %b"
     month_names:
     -
     - enero
@@ -72,34 +91,11 @@ en:
     - octubre
     - noviembre
     - diciembre
-  
-en:
-  activerecord:
-    attributes:
-      patient:
-        first_name: ""
-        last_name: ""
-        age: ""
-        address: ""
-        annotations: ""
-    errors:
-      models:
-        patient:
-          attributes:
-            first_name:
-              blank: "El nombre no puede quedar en blanco."
-              too_short: "El nombre debe tener al menos 3 caracteres."
-              too_long: "El nombre no puede ser mas largo de 25 caracteres."
-            last_name:
-              blank: "El apellido no puede quedar en blanco." 
-              too_short: "El apellido debe tener al menos 3 caracteres."
-              too_long: "El apellido no puede ser mas largo de 25 caracteres."
-            age:
-              blank: "La edad no puede quedar en blanco."
-            address:
-              too_long: "El direccion no puede ser mas larga de 80 caracteres."
-            annotations:
-              too_long: "Las anotaciones no pueden tener mas de 400 caracteres."
+  time:
+    formats:
+      default: "%d/%m/%Y"
+      long: "%A, %d de %B de %Y, %I:%M %P"
+      short: "%d de %b"
 
 
  

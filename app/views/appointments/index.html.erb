@@ -41,7 +41,7 @@
             <td><%= link_to patient.first_name + " " + patient.last_name, patient_path(patient) %></td>
             <!-- Afortunadamente, patient.created_at se refiere a la fecha de la creacion de la cita y no de la
                  creacion del paciente. -->
-            <td><%= patient.created_at   %></td>
+            <td><%= l patient.created_at, format: :long %></td>
           </tr>
         <% end %>
       </tbody>
