@@ -1,0 +1,78 @@
+<%= render 'layouts/navbar' %>
+
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <div class="title-page">
+      <h2>Editar informacion de la Cita</h2>
+    </div>
+  </div>
+</div>
+
+<div class="errors-new-patient">
+  <% if @appointment.errors.any? %>
+  <h2 class="errors-title"><strong><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Errores</strong><h2>
+    <ul>
+      <% @appointment.errors.full_messages.each do |message| %>
+        <li class="errors-message"><%= message %></li>
+        <% end %>
+    </ul>
+  <% end %>
+</div>
+
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <%= form_for(@appointment, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+    
+      <div class="form-group">
+        <div class="control-label col-sm-3">
+          <%= f.label :sintomas %>
+        </div>
+        <div class="col-sm-7">
+            <%= f.text_area :symptoms,  rows: 4 , class: "form-control", placeholder: "Ingresar los sintomas del paciente." %>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="control-label col-sm-3">
+          <%= f.label :medicinas %>
+        </div>
+        <div class="col-sm-7">
+            <%= f.text_area :medicines,  rows: 4, class: "form-control", placeholder: "Ingresar las medicinas recetadas al paciente." %>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="control-label col-sm-3">
+          <%= f.label :cuidados %>
+        </div>
+        <div class="col-sm-7">
+            <%= f.text_area :cares,  rows: 4, class: "form-control", placeholder: "Ingresar los cuidados recomendados al paciente." %>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="control-label col-sm-3">
+          <%= f.label :anotaciones %>
+        </div>
+        <div class="col-sm-7">
+            <%= f.text_area :annotations,  rows: 10, class: "form-control", placeholder: "Ingresar anotaciones de la cita." %>
+        </div>
+      </div>
+      
+      <%= f.hidden_field :patient_id, :value => params[:patient] %>
+      
+      <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-7">
+          <!-- Metodo de Ruby para distinguir si se esta haciendo el llamado a la creacion de un nuevo registro o no. -->
+          <%= f.submit(@appointment.new_record? ? "Registrar" : "Actualizar", class: "btn btn-primary btn-lg") %>
+        </div>
+      </div>
+     
+    <% end %>
+    
+    <div class="col-sm-offset-3 col-sm-7">
+      [ <%= link_to 'Cancelar registro y volver al menu principal.', home_path %> ]
+    </div>
+    
+  </div>
+</div>

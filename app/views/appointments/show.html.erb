@@ -17,7 +17,7 @@
   
   <dl class="dl-horizontal">
     <dt><%= "Fecha de la cita:" %></dt>
-    <dd><%= @appointment.created_at %></dd>
+    <dd><%= l @appointment.created_at, format: :long %></dd>
   </dl>
   
   <dl class="dl-horizontal">
@@ -41,7 +41,7 @@
   </dl>
   
   <div class="patient-actions">
-    <%= link_to 'Editar', edit_appointment_path(@appointment), class: "btn btn-xs btn-primary" %>
+    <%= link_to 'Editar', edit_appointment_path(@appointment, patient: @appointment.patient.id), class: "btn btn-xs btn-primary" %>
     <%= link_to 'Eliminar', appointment_path(@appointment), method: :delete, 
                                        data: { confirm: "¿Esta seguro que desea eliminar el registro de esta cita?" }, 
                                        class: "btn btn-xs btn-danger"  %>

@@ -61,7 +61,7 @@ class PatientsController < ApplicationController
     @patient = Patient.find(params[:id])
     @patient.destroy
     flash[:success] = "El registro del paciente fue eliminado."
-    redirect_to listar_pacientes_path
+    redirect_to patients_path
   end
   
   def edit

@@ -14,7 +14,7 @@
     <%= search_form_for @q, :url => url_for(:controller => 'appointments', :action => 'index') do |f| %>
     
       <div class="col-sm-6 col-sm-offset-2 barra-busqueda">
-        <%= f.search_field :first_name_cont, class: "form-control", placeholder: "Ingresar nombre del paciente.", autofocus: true %>
+        <%= f.search_field :patient_first_name_cont, class: "form-control", placeholder: "Ingresar nombre del paciente.", autofocus: true %>
       </div>
       
       <div class="col-sm-3">
@@ -27,25 +27,29 @@
       <thead>
         <tr>
           <th class="columna-boton-cita"></th>
-          <th><%= sort_link(@q, :first_name, 'Nombre del Paciente', default_order: :desc) %></th>
-          <th><%= sort_link(@q, :created_at, 'Fecha de la Cita', default_order: :desc) %></th>
+          <th><%= sort_link(@q, :patient_first_name, 'Nombre del Paciente') %></th>
+          <th><%= sort_link(@q, :created_at, 'Fecha de la Cita') %></th>
         </tr>
       </thead>
       <tbody>
-        <% @patients.each do |patient| %>
+        <% @appointments.each do |appointment| %>
           <tr>
             <td class="columna-boton-cita">
-              <%= link_to '<i class="fa fa-eye" aria-hidden="true"></i>'.html_safe, appointment_path(patient), 
+              <%= link_to '<i class="fa fa-eye" aria-hidden="true"></i>'.html_safe, appointment_path(appointment), 
                   class:"btn btn-success btn-xs boton-cita", title: "Ver informacion de la cita" %>
             </td>
-            <td><%= link_to patient.first_name + " " + patient.last_name, patient_path(patient) %></td>
+            <td><%= link_to appointment.patient.first_name + " " + appointment.patient.last_name, patient_path(appointment.patient_id) %></td>
             <!-- Afortunadamente, patient.created_at se refiere a la fecha de la creacion de la cita y no de la
                  creacion del paciente. -->
-            <td><%= l patient.created_at, format: :long %></td>
+            <td><%= l appointment.created_at, format: :long %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
+    
+    <div align="center">
+      <%= will_paginate %>
+    </div>
     
   </div>
 </div>
