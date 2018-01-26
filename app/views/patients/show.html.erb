@@ -51,7 +51,8 @@
   </dl>
   
   <div class="patient-actions">
-    <%= link_to 'Crear Cita', new_appointment_path(patient: @patient.id), class:"btn btn-success btn-xs boton-cita"%>
+    <%= link_to 'Crear Cita', new_appointment_path(patient: @patient.id), class:"btn btn-success btn-xs"%>
+    <%= link_to 'Historial de Citas', historial_path(@patient), class:"btn btn-info btn-xs"%>
     <%= link_to 'Editar', edit_patient_path(@patient), class: "btn btn-xs btn-primary" %>
     <%= link_to 'Eliminar', patient_path(@patient), method: :delete, 
                                        data: { confirm: "¿Esta seguro que desea eliminar el registro de este paciente?" }, 

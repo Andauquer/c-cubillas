@@ -1,0 +1,46 @@
+<%= render 'layouts/navbar' %>
+
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <div class="title-page titulo-lista-de-pacientes">
+      <h2>Historal del Paciente</h2>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    
+    <table class="tabla-buscar-pacientes"  align="center">
+      <thead>
+        <tr>
+          <th class="columna-boton-cita"></th>
+          <th> Nombre del Paciente </th>
+          <th><%= sort_link(@q, :created_at, 'Fecha de la Cita') %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Recordar que patient es un objeto con la informaicion de la cita y su paciente.
+             El nombre adecuado era usar @appointments, no @patients, pero debi ponerlo asi por
+             por la convencion de nombres que usa will_paginate. -->
+        <% @patients.each do |patient| %>
+          <tr>
+            <td class="columna-boton-cita">
+              <%= link_to '<i class="fa fa-eye" aria-hidden="true"></i>'.html_safe, appointment_path(patient), 
+                  class:"btn btn-success btn-xs boton-cita", title: "Ver informacion de la cita" %>
+            </td>
+            <td><%= patient.patient.first_name %></td>
+            <!-- Afortunadamente, patient.created_at se refiere a la fecha de la creacion de la cita y no de la
+                 creacion del paciente. -->
+            <td><%= l patient.created_at, format: :long %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    
+    <div align="center">
+      <%= will_paginate %>
+    </div>
+    
+ </div>
+</div>

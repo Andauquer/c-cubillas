@@ -53,8 +53,23 @@ class PatientsController < ApplicationController
   end
   
   def listar
-    #De esta manera especificamos la paginacion en el muestro de articulos
     @patients = Patient.paginate(page: params[:page], per_page: 3)
+  end
+  
+  def historial
+    @patient = Patient.find(params[:id])
+    @q = Appointment.ransack(patient_id_eq: @patient.id)
+    #Tuve que hacer manualmente el sorting de la fecha de la creacion de la cita, pues Ransack al parecer tiene
+    #un error o algo desconocido para mi que impedia hacer un sorting correcto cuando solo se llama a un solo
+    #paciente.
+    if !params[:q].present?
+      @q.sorts = ['created_at desc'] 
+    elsif params[:q][:s] == 'created_at asc'
+      @q.sorts = ['created_at asc'] 
+    elsif params[:q][:s] == 'created_at desc'
+      @q.sorts = ['created_at desc']
+    end
+    @patients = @q.result.paginate(page: params[:page], per_page: 8)
   end
   
   def destroy

@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   resources :appointments
   
   get 'listar_pacientes', to: 'patients#listar'
+  get 'patients/:id/appointments', to: 'patients#historial', as: 'historial'
+  
   get 'menu_pacientes', to: 'pages#patients_menu'
   get 'menu_citas', to: 'pages#dates_menu'
   get 'menu_nueva_cita', to: 'pages#new_date_menu'
