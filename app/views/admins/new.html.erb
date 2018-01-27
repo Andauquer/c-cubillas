@@ -1,45 +1,56 @@
-<%= render 'layouts/navbar' %>
-
-<div class="title-page text-center">
-  <h1>Registro de Credenciales</h1>
-</div>
-
-<div class="advertencia text-center">
-  <strong>Advertencia!</strong> <p>Esta informacion debe ser unica y exclusivamente conocida por el administrador
-    de la aplicacion.</p>
-</div>
-
 <div class="row">
-  <div class="col-sm-4 col-sm-offset-4 well">
-    <%= form_for(@admin, :html => {class: "form-horizontal", role: "form"}) do |f| %>
-      
-      <div class="form-group">
-        <div class="input-group margin-bottom-sm col-sm-offset-1 col-sm-10">
-          <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-          <%= f.email_field :email, class: "form-control", placeholder: "Correo Electronico" %>
-        </div>
-      </div>
-      
-      <div class="form-group">
-        <div class="input-group margin-bottom-sm col-sm-offset-1 col-sm-10">
-          <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
-          <%= f.password_field :password, class: "form-control", placeholder: "Contraseña" %>
-        </div>
-      </div>
-      
-      <div class="form-group">
-        <div class="text-center">
-          <!-- Metodo de Ruby para distinguir si se esta haciendo el llamado a la creacion de un nuevo registro o no. -->
-          <%= f.submit(@admin.new_record? ? "Guardar Informacion" : "Actualizar Datos", class: "btn btn-primary btn-sm") %>
-        </div>
-      </div>
-     
-    <% end %>
+  <div class="col-sm-8 col-sm-offset-2">
+    <div class="title-page">
+      <h2>Registro de Crendenciales</h2>
+    </div>
+    <div class="advertencia">
+      <h4>Nuevo Administrador</h4>
+    </div>
   </div>
 </div>
 
-<p>
-  *La direccion de correo electronica especificada, sera aquella a la cual el administrador tendra que avocarse en
-   caso de olvidar la contraseña.
-</p>
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    
+    <div class="text-center">
+      <p>Esta informacion debe ser unica y exclusivamente conocida por el administrador
+        de la aplicacion.</p>
+    </div>
+    
+    <div class="row">
+      <div class="col-sm-4 col-sm-offset-4 well">
+        <%= form_for(@admin, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+          
+          <div class="form-group">
+            <div class="input-group margin-bottom-sm col-sm-offset-1 col-sm-10">
+              <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+              <%= f.email_field :email, class: "form-control", placeholder: "Correo Electronico" %>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <div class="input-group margin-bottom-sm col-sm-offset-1 col-sm-10">
+              <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+              <%= f.password_field :password, class: "form-control", placeholder: "Contraseña" %>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <div class="text-center">
+              <!-- Metodo de Ruby para distinguir si se esta haciendo el llamado a la creacion de un nuevo registro o no. -->
+              <%= f.submit(@admin.new_record? ? "Guardar Informacion" : "Actualizar Datos", class: "btn btn-primary btn-sm") %>
+            </div>
+          </div>
+         
+        <% end %>
+      </div>
+    </div>
+    
+    <p>
+      *La direccion de correo electronica especificada, sera aquella a la cual el administrador tendra que avocarse en
+       caso de olvidar la contraseña.
+    </p>
+    
+  </div>
+</div>
 
