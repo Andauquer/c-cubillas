@@ -9,7 +9,6 @@ class SessionsController < ApplicationController
     
     if admin && admin.authenticate(params[:session][:password])
       session[:user_id] = admin.id
-      flash[:success] = "Bienvenido, Dr. Cubillas"
       redirect_to home_path
     else
       flash.now[:danger] = "Hubo un problema con el inicio de sesion, intente ingresar nuevamente la contraseña."

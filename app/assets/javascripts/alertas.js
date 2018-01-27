@@ -1,7 +1,7 @@
 /*global $*/
 
 $(document).ready(function() {
-  $('.alert').delay(1000).fadeOut(4000);
+  $('.alert').fadeOut(2000);
 });
 
 $(document).ready(function() {
