@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "https://clinica-familiar-cubillas.herokuapp.com/"
+  default from: "no-reply@clinica-cubillas.com"
   layout 'mailer'
 end
