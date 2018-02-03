@@ -34,17 +34,17 @@ class PatientsController < ApplicationController
   end
   
   def create
-    @patient = Patient.new(patient_params.except(:new_appointment))
+    @patient = Patient.new(patient_params.except(:new_anamnesi))
     if @patient.save
       flash[:success] = "La informacion del paciente ha sido registrada."
-      if patient_params[:new_appointment].present?
-        redirect_to new_appointment_path(patient: @patient.id)
+      if patient_params[:new_anamnesi].present?
+        redirect_to new_anamnesi_path(patient: @patient.id)
       else
         redirect_to patient_path(@patient)
       end
     else
-      if patient_params[:new_appointment].present?
-        params[:new_appointment] = true
+      if patient_params[:new_anamnesi].present?
+        params[:new_anamnesi] = true
         render 'new'
       else
         render 'new'
@@ -58,7 +58,7 @@ class PatientsController < ApplicationController
   
   def historial
     @patient = Patient.find(params[:id])
-    @q = Appointment.ransack(patient_id_eq: @patient.id)
+    @q = Anamnesi.ransack(patient_id_eq: @patient.id)
     #Tuve que hacer manualmente el sorting de la fecha de la creacion de la cita, pues Ransack al parecer tiene
     #un error o algo desconocido para mi que impedia hacer un sorting correcto cuando solo se llama a un solo
     #paciente.
@@ -86,7 +86,7 @@ class PatientsController < ApplicationController
   private
   
   def patient_params
-    params.require(:patient).permit(:first_name, :last_name, :age, :address, :email, :home_number, :phone_numer, :blood_type, :annotations, :new_appointment)
+    params.require(:patient).permit(:first_name, :last_name, :age, :address, :email, :home_number, :phone_numer, :blood_type, :annotations, :new_anamnesi)
   end
   
   def verificar_bd

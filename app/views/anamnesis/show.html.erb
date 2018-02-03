@@ -1,0 +1,135 @@
+<%= render 'layouts/navbar' %>
+
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <div class="title-page titulo-lista-de-pacientes">
+      <h2>Informacion de la Consulta</h2>
+    </div>
+  </div>
+</div>
+
+<div class="well col-xs-8 col-xs-offset-2">
+  
+  <dl class="dl-horizontal">
+    <dt><%= "Nombre del Paciente:" %></dt>
+    <dd><%= link_to @anamnesi.patient.first_name + " " + @anamnesi.patient.last_name, patient_path(@anamnesi.patient) %></dd>
+  </dl>
+  
+  <dl class="dl-horizontal">
+    <dt><%= "Fecha de la cita:" %></dt>
+    <dd><%= l @anamnesi.created_at, format: :long %></dd>
+  </dl>
+  
+  <dl class="dl-horizontal">
+    <dt><%= "S.P.:" %></dt>
+    <dd><%= @anamnesi.sp %></dd>
+  </dl>
+  
+  <dl class="dl-horizontal">
+    <dt><%= "H.E.A.:" %></dt>
+    <dd><%= @anamnesi.hea %></dd>
+  </dl>
+  
+  <dl class="dl-horizontal">
+    <dt><%= "F.O.G:" %></dt>
+    <dd><%= @anamnesi.fog %></dd>
+  </dl>
+  
+  <dl class="dl-horizontal">
+    <dt><%= "Antecedentes Personales:" %></dt>
+    <dd><%= @anamnesi.ape %></dd>
+  </dl>
+  
+  <dl class="dl-horizontal">
+    <dt><%= "Antecedentes Patologicos:" %></dt>
+    <dd><%= @anamnesi.apa %></dd>
+  </dl>
+  
+  <dl class="dl-horizontal">
+    <dt><%= "Antecedentes Familiares:" %></dt>
+    <dd><%= @anamnesi.afa %></dd>
+  </dl>
+  
+  <dl class="dl-horizontal">
+    <dt><%= "S/V:" %></dt>
+    <dd><%= @anamnesi.sv %></dd>
+  </dl>
+  
+  <dl class="dl-horizontal">
+    <dt><%= "P/A:" %></dt>
+    <dd><%= @anamnesi.pa %></dd>
+  </dl>
+  
+  <dl class="dl-horizontal">
+    <dt><%= "F.R.:" %></dt>
+    <dd><%= @anamnesi.fr %></dd>
+  </dl>
+  
+  <dl class="dl-horizontal">
+    <dt><%= "P:" %></dt>
+    <dd><%= @anamnesi.p %></dd>
+  </dl>
+  
+  <dl class="dl-horizontal">
+    <dt><%= "T:" %></dt>
+    <dd><%= @anamnesi.t %></dd>
+  </dl>
+  
+  <dl class="dl-horizontal">
+    <dt><%= "F.C. y P.:" %></dt>
+    <dd><%= @anamnesi.fcyp %></dd>
+  </dl>
+  
+  <dl class="dl-horizontal">
+    <dt><%= "T.C.:" %></dt>
+    <dd><%= @anamnesi.tc %></dd>
+  </dl>
+  
+  <dl class="dl-horizontal">
+    <dt><%= "O.R.L.:" %></dt>
+    <dd><%= @anamnesi.orl %></dd>
+  </dl>
+  
+  <dl class="dl-horizontal">
+    <dt><%= "C.P.:" %></dt>
+    <dd><%= @anamnesi.cp %></dd>
+  </dl>
+  
+  <dl class="dl-horizontal">
+    <dt><%= "Abdomen:" %></dt>
+    <dd><%= @anamnesi.abd %></dd>
+  </dl>
+  
+  <dl class="dl-horizontal">
+    <dt><%= "Extremidades:" %></dt>
+    <dd><%= @anamnesi.ext %></dd>
+  </dl>
+  
+  <dl class="dl-horizontal">
+    <dt><%= "Piel y Faneras:" %></dt>
+    <dd><%= @anamnesi.pyf %></dd>
+  </dl>
+  
+  <dl class="dl-horizontal">
+    <dt><%= "IDX:" %></dt>
+    <dd><%= @anamnesi.idx %></dd>
+  </dl>
+  
+  <dl class="dl-horizontal">
+    <dt><%= "TX:" %></dt>
+    <dd><%= @anamnesi.tx %></dd>
+  </dl>
+  
+  <dl class="dl-horizontal">
+    <dt><%= "Anotaciones:" %></dt>
+    <dd><%= @anamnesi.annotations %></dd>
+  </dl>
+  
+  <div class="patient-actions">
+    <%= link_to 'Editar', edit_anamnesi_path(@anamnesi, patient: @anamnesi.patient.id), class: "btn btn-xs btn-primary" %>
+    <%= link_to 'Eliminar', anamnesi_path(@anamnesi), method: :delete, 
+                                       data: { confirm: "¿Esta seguro que desea eliminar el registro de esta consulta?" }, 
+                                       class: "btn btn-xs btn-danger"  %>
+  </div>
+  
+</div>

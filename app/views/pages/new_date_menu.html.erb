@@ -3,7 +3,7 @@
 <div class="row">
   <div class="col-sm-8 col-sm-offset-2">
     <div class="title-page">
-      <h2>Nueva Cita</h2>
+      <h2>Nueva Consulta</h2>
     </div>
   </div>
  </div>
@@ -14,15 +14,15 @@
     <h4>
       <%= link_to '<i class="fa fa-angle-right" aria-hidden="true"></i> Viejo Paciente'.html_safe, patients_path %>
     </h4> 
-   <p>Elija esta opcion si desea crear una cita para una persona que ya se encuentra
+   <p>Elija esta opcion si desea crear una consulta para una persona que ya se encuentra
        ingresada en el registro de pacientes de la clinica.</p>
   </div>
   
   <div class="bs-callout bs-callout-danger" id="callout-glyphicons-dont-mix"> 
     <h4>
-      <%= link_to '<i class="fa fa-angle-right" aria-hidden="true"></i> Nuevo Paciente'.html_safe, new_patient_path(new_appointment: true) %>
+      <%= link_to '<i class="fa fa-angle-right" aria-hidden="true"></i> Nuevo Paciente'.html_safe, new_patient_path(new_anamnesi: true) %>
     </h4> 
-   <p>Elija esta opcion si desea crear una cita para una persona que aun no se encuentra
+   <p>Elija esta opcion si desea crear una consulta para una persona que aun no se encuentra
        ingresado en el registro de pacientes de la clinica. Por lo que primero se 
        procedera a realizar el ingreso de su informacion a la base de datos.</p>  
   </div>

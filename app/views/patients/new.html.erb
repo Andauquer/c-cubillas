@@ -106,8 +106,8 @@
       
       <div class="form-group">
         <div class="col-sm-offset-3 col-sm-7">
-          <% if params[:new_appointment].present? %>
-            <%= f.hidden_field :new_appointment, :value => params[:new_appointment] %>
+          <% if params[:new_anamnesi].present? %>
+            <%= f.hidden_field :new_anamnesi, :value => params[:new_anamnesi] %>
             <%= f.submit("Guardar y Crear Cita", class: "btn btn-primary btn-lg") %>
           <% else %>
             <%= f.submit(@patient.new_record? ? "Registrar" : "Actualizar", class: "btn btn-primary btn-lg") %>

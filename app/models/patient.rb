@@ -1,6 +1,7 @@
 class Patient < ActiveRecord::Base
   
   has_many :appointments, dependent: :destroy
+  has_many :anamnesis, dependent: :destroy
   
   #Esta es una expresion regular para validar el formato que deberia tener un email.
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

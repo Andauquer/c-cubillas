@@ -1,0 +1,231 @@
+<%= render 'layouts/navbar' %>
+
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <div class="title-page">
+      <h2>Registrar Consulta</h2>
+    </div>
+  </div>
+</div>
+
+<div class="errors-new-patient">
+  <% if @anamnesi.errors.any? %>
+  <h2 class="errors-title"><strong><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Errores</strong><h2>
+    <ul>
+      <% @anamnesi.errors.full_messages.each do |message| %>
+        <li class="errors-message"><%= message %></li>
+        <% end %>
+    </ul>
+  <% end %>
+</div>
+
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <%= form_for(@anamnesi, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+    
+      <div class="form-group">
+        <div class="control-label col-sm-3">
+          <%= f.label :sp %>
+        </div>
+        <div class="col-sm-7">
+            <%= f.text_area :sp,  rows: 3 , class: "form-control"%>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="control-label col-sm-3">
+          <%= f.label :hea %>
+        </div>
+        <div class="col-sm-7">
+            <%= f.text_area :hea,  rows: 3 , class: "form-control"%>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="control-label col-sm-3">
+          <%= f.label :fog %>
+        </div>
+        <div class="col-sm-7">
+            <%= f.text_area :fog,  rows: 3 , class: "form-control"%>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="control-label col-sm-3">
+          <%= f.label :antecendentes_personales %>
+        </div>
+        <div class="col-sm-7">
+            <%= f.text_area :ape,  rows: 4 , class: "form-control"%>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="control-label col-sm-3">
+          <%= f.label :antecendentes_patologicos %>
+        </div>
+        <div class="col-sm-7">
+            <%= f.text_area :apa,  rows: 4 , class: "form-control"%>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="control-label col-sm-3">
+          <%= f.label :antecendentes_familiares %>
+        </div>
+        <div class="col-sm-7">
+            <%= f.text_area :afa,  rows: 4 , class: "form-control"%>
+        </div>
+      </div>
+      
+       <div class="form-group">
+        <div class="control-label col-sm-3">
+          <%= f.label :sv %>
+        </div>
+        <div class="col-sm-7">
+            <%= f.text_area :sv,  rows: 3 , class: "form-control"%>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="control-label col-sm-3">
+          <%= f.label :pa %>
+        </div>
+        <div class="col-sm-7">
+            <%= f.text_area :pa,  rows: 3 , class: "form-control"%>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="control-label col-sm-3">
+          <%= f.label :fr %>
+        </div>
+        <div class="col-sm-7">
+            <%= f.text_area :fr,  rows: 3 , class: "form-control"%>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="control-label col-sm-3">
+          <%= f.label :p %>
+        </div>
+        <div class="col-sm-7">
+            <%= f.text_area :p,  rows: 3 , class: "form-control"%>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="control-label col-sm-3">
+          <%= f.label :t %>
+        </div>
+        <div class="col-sm-7">
+            <%= f.text_area :t,  rows: 3 , class: "form-control"%>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="control-label col-sm-3">
+          <%= f.label :fc_y_p %>
+        </div>
+        <div class="col-sm-7">
+            <%= f.text_area :fcyp,  rows: 3 , class: "form-control"%>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="control-label col-sm-3">
+          <%= f.label :temperatura_corporal %>
+        </div>
+        <div class="col-sm-7">
+            <%= f.text_area :tc,  rows: 3 , class: "form-control"%>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="control-label col-sm-3">
+          <%= f.label :orl %>
+        </div>
+        <div class="col-sm-7">
+            <%= f.text_area :orl,  rows: 3 , class: "form-control"%>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="control-label col-sm-3">
+          <%= f.label :cp %>
+        </div>
+        <div class="col-sm-7">
+            <%= f.text_area :cp,  rows: 3 , class: "form-control"%>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="control-label col-sm-3">
+          <%= f.label :abdomen %>
+        </div>
+        <div class="col-sm-7">
+            <%= f.text_area :abd,  rows: 3 , class: "form-control"%>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="control-label col-sm-3">
+          <%= f.label :extremidades %>
+        </div>
+        <div class="col-sm-7">
+            <%= f.text_area :ext,  rows: 3 , class: "form-control"%>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="control-label col-sm-3">
+          <%= f.label :piel_y_faneras %>
+        </div>
+        <div class="col-sm-7">
+            <%= f.text_area :pyf,  rows: 3 , class: "form-control"%>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="control-label col-sm-3">
+          <%= f.label :idx %>
+        </div>
+        <div class="col-sm-7">
+            <%= f.text_area :idx,  rows: 3 , class: "form-control"%>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="control-label col-sm-3">
+          <%= f.label :tx %>
+        </div>
+        <div class="col-sm-7">
+            <%= f.text_area :tx,  rows: 3 , class: "form-control"%>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="control-label col-sm-3">
+          <%= f.label :anotaciones %>
+        </div>
+        <div class="col-sm-7">
+            <%= f.text_area :annotations,  rows: 10, class: "form-control", placeholder: "Ingresar anotaciones de la cita." %>
+        </div>
+      </div>
+      
+      <%= f.hidden_field :patient_id, :value => params[:patient] %>
+      
+      <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-7">
+          <!-- Metodo de Ruby para distinguir si se esta haciendo el llamado a la creacion de un nuevo registro o no. -->
+          <%= f.submit(@anamnesi.new_record? ? "Registrar" : "Actualizar", class: "btn btn-primary btn-lg") %>
+        </div>
+      </div>
+     
+    <% end %>
+    
+    <div class="col-sm-offset-3 col-sm-7">
+      [ <%= link_to 'Cancelar registro y volver al menu principal.', home_path %> ]
+    </div>
+    
+  </div>
+</div>

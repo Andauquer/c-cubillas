@@ -3,7 +3,7 @@
 <div class="row">
   <div class="col-sm-8 col-sm-offset-2">
     <div class="title-page titulo-lista-de-pacientes">
-      <h2>Historal del Paciente</h2>
+      <h2>Expediente del Paciente</h2>
     </div>
   </div>
 </div>
@@ -16,7 +16,7 @@
         <tr>
           <th class="columna-boton-cita"></th>
           <th> Nombre del Paciente </th>
-          <th><%= sort_link(@q, :created_at, 'Fecha de la Cita') %></th>
+          <th><%= sort_link(@q, :created_at, 'Fecha de la Consulta') %></th>
         </tr>
       </thead>
       <tbody>
@@ -26,10 +26,10 @@
         <% @patients.each do |patient| %>
           <tr>
             <td class="columna-boton-cita">
-              <%= link_to '<i class="fa fa-eye" aria-hidden="true"></i>'.html_safe, appointment_path(patient), 
-                  class:"btn btn-success btn-xs boton-cita", title: "Ver informacion de la cita" %>
+              <%= link_to '<i class="fa fa-eye" aria-hidden="true"></i>'.html_safe, anamnesi_path(patient), 
+                  class:"btn btn-success btn-xs boton-cita", title: "Ver informacion de la consulta" %>
             </td>
-            <td><%= patient.patient.first_name + " " + patient.patient.last_name %></td>
+            <td><%= link_to patient.patient.first_name + " " + patient.patient.last_name, patient_path(patient) %></td>
             <!-- Afortunadamente, patient.created_at se refiere a la fecha de la creacion de la cita y no de la
                  creacion del paciente. -->
             <td><%= l patient.created_at, format: :long %></td>

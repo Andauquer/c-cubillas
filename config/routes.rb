@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :patients
   resources :appointments
+  resources :anamnesis
   
   get 'listar_pacientes', to: 'patients#listar'
   get 'patients/:id/appointments', to: 'patients#historial', as: 'historial'

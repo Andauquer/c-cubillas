@@ -37,8 +37,8 @@
         <% @patients.each do |patient| %>
           <tr>
             <td class="columna-boton-cita">
-              <%= link_to '<i class="fa fa-plus-square" aria-hidden="true"></i>'.html_safe, new_appointment_path(patient: patient.id), 
-                  class:"btn btn-success btn-xs boton-cita", title: "Crear cita" %>
+              <%= link_to '<i class="fa fa-plus-square" aria-hidden="true"></i>'.html_safe, new_anamnesi_path(patient: patient.id), 
+                  class:"btn btn-success btn-xs boton-cita", title: "Registrar consulta" %>
             </td>
             <td><%= link_to patient.first_name + " " + patient.last_name, patient_path(patient) %></td>
             <td><%= patient.age %></td>

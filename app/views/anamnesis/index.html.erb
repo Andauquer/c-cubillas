@@ -1,0 +1,55 @@
+<%= render 'layouts/navbar' %>
+
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <div class="title-page titulo-lista-de-pacientes">
+      <h2>Buscar Consulta</h2>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    
+    <%= search_form_for @q, :url => url_for(:controller => 'anamnesis', :action => 'index') do |f| %>
+    
+      <div class="col-sm-6 col-sm-offset-2 barra-busqueda">
+        <%= f.search_field :patient_first_name_cont, class: "form-control", placeholder: "Ingresar nombre del paciente.", autofocus: true %>
+      </div>
+      
+      <div class="col-sm-3">
+        <%= f.submit "Buscar",  class: "btn btn-primary btn-md" %>
+      </div> 
+        
+    <% end %>
+    
+    <table class="tabla-buscar-pacientes"  align="center">
+      <thead>
+        <tr>
+          <th class="columna-boton-cita"></th>
+          <th><%= sort_link(@q, :patient_first_name, 'Nombre del Paciente') %></th>
+          <th><%= sort_link(@q, :created_at, 'Fecha de la Consulta') %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @anamnesis.each do |anamnesi| %>
+          <tr>
+            <td class="columna-boton-cita">
+              <%= link_to '<i class="fa fa-eye" aria-hidden="true"></i>'.html_safe, anamnesi_path(anamnesi), 
+                  class:"btn btn-success btn-xs boton-cita", title: "Ver informacion de la consulta" %>
+            </td>
+            <td><%= link_to anamnesi.patient.first_name + " " + anamnesi.patient.last_name, patient_path(anamnesi.patient_id) %></td>
+            <!-- Afortunadamente, patient.created_at se refiere a la fecha de la creacion de la consulta y no de la
+                 creacion del paciente. -->
+            <td><%= l anamnesi.created_at, format: :long %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    
+    <div align="center">
+      <%= will_paginate %>
+    </div>
+    
+  </div>
+</div>
