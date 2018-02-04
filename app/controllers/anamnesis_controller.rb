@@ -12,6 +12,7 @@ class AnamnesisController < ApplicationController
       flash[:success] = "La informacion de la consulta ha sido registrada."
       redirect_to anamnesi_path(@anamnesi)
     else
+      params[:patient] = @anamnesi.patient_id
       render 'new'
     end
   end

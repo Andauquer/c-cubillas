@@ -57,7 +57,11 @@
           <%= f.label :fecha %>
         </div>
         <div class="col-sm-7">
-          <%= f.text_field :fecha, class: "datetimepicker", :value=> @appointment.fecha.strftime('%d/%m/%Y %I:%M %p') %>
+          <% if  @appointment.fecha.present? %>
+            <%= f.text_field :fecha, class: "datetimepicker", :value=> @appointment.fecha.strftime('%d/%m/%Y %I:%M %p') %>
+          <% else %>
+            <%= f.text_field :fecha, class: "datetimepicker" %>
+          <% end %>
         </div>
       </div>
       

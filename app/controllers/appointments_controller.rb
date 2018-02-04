@@ -12,6 +12,7 @@ class AppointmentsController < ApplicationController
       flash[:success] = "La informacion de la cita ha sido registrada."
       redirect_to appointment_path(@appointment)
     else
+      params[:patient] = @appointment.patient_id
       render 'new'
     end
   end
