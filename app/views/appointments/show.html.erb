@@ -12,32 +12,32 @@
   
   <dl class="dl-horizontal">
     <dt><%= "Nombre del Paciente:" %></dt>
-    <dd><%= @appointment.patient.first_name + " " + @appointment.patient.last_name%></dd>
+    <dd><%= link_to @appointment.patient.first_name + " " + @appointment.patient.last_name, patient_path(@appointment.patient) %></dd>
   </dl>
   
   <dl class="dl-horizontal">
-    <dt><%= "Fecha de la cita:" %></dt>
+    <dt><%= "Se programo el:" %></dt>
     <dd><%= l @appointment.created_at, format: :long %></dd>
   </dl>
   
   <dl class="dl-horizontal">
-    <dt><%= "Sintomas Detectados:" %></dt>
-    <dd><%= @appointment.symptoms %></dd>
+    <dt><%= "Idx:" %></dt>
+    <dd><%= @appointment.idx %></dd>
   </dl>
   
   <dl class="dl-horizontal">
-    <dt><%= "Medicinas Recetadas:" %></dt>
-    <dd><%= @appointment.medicines %></dd>
-  </dl>
-  
-  <dl class="dl-horizontal">
-    <dt><%= "Cuidados Recetados:" %></dt>
-    <dd><%= @appointment.cares %></dd>
+    <dt><%= "Tx:" %></dt>
+    <dd><%= @appointment.tx %></dd>
   </dl>
   
   <dl class="dl-horizontal">
     <dt><%= "Anotaciones:" %></dt>
     <dd><%= @appointment.annotations %></dd>
+  </dl>
+  
+  <dl class="dl-horizontal">
+    <dt><%= "Fecha programada:" %></dt>
+    <dd><%= l @appointment.fecha, format: :long %></dd>
   </dl>
   
   <div class="patient-actions">

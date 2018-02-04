@@ -10,7 +10,7 @@
 
 <div class="row paneles">
   
-  <div class="col-sm-4 col-sm-offset-2">
+  <div class="col-sm-4">
     <div class="thumbnail">
       <%= image_tag ("register_date.jpg"), :class => "thumbnail_image" %>
       <div class="caption">
@@ -30,6 +30,18 @@
         <p>Consulte el historial medico de sus pacientes a traves del registro total de las consultas,
            realice busquedas por nombre de paciente o por fecha para una vista adecuada.</p>
         <p><%= link_to 'Buscar', anamnesis_path, class: "btn btn-md btn-primary" %></p>
+      </div>
+    </div>
+  </div>
+  
+   <div class="col-sm-4">
+    <div class="thumbnail">
+      <%= image_tag ("search_date.jpg"), :class => "thumbnail_image"  %>
+      <div class="caption">
+        <h3>Ver Citas</h3>
+        <p>Presione el siguiente boton para obtener una lista con todas las citas programadas a futuro, 
+           ordene la lista por orden alfabetico del nombre de los pacientes o por fecha.</p>
+        <p><%= link_to 'Buscar', appointments_path, class: "btn btn-md btn-primary" %></p>
       </div>
     </div>
   </div>

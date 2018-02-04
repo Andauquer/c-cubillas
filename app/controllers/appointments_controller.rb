@@ -22,12 +22,12 @@ class AppointmentsController < ApplicationController
   
   def index
     if params[:commit].present?
-      @q = Appointment.ransack(first_name_cont: params[:q][:patient_first_name_cont], last_name_cont: params[:q][:patient_first_name_cont], m: 'or')
-      @q.sorts = ['created_at desc'] if @q.sorts.empty?
+      @q = Appointment.ransack(patient_first_name_cont: params[:q][:patient_first_name_cont], patient_last_name_cont: params[:q][:patient_first_name_cont], m: 'or')
+      @q.sorts = ['fecha asc'] if @q.sorts.empty?
       @appointments = @q.result.paginate(page: params[:page], per_page: 8)
     else
       @q = Appointment.ransack(params[:q])
-      @q.sorts = ['created_at desc'] if @q.sorts.empty?
+      @q.sorts = ['fecha asc'] if @q.sorts.empty?
       @appointments = @q.result.paginate(page: params[:page], per_page: 8)
     end
   end
@@ -56,7 +56,7 @@ class AppointmentsController < ApplicationController
   private
   
   def appointment_params
-    params.require(:appointment).permit(:symptoms, :medicines, :cares, :annotations, :patient_id)
+    params.require(:appointment).permit(:idx, :tx, :annotations, :fecha, :patient_id)
   end
   
 end

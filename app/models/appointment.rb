@@ -2,10 +2,10 @@ class Appointment < ActiveRecord::Base
   
   belongs_to :patient
   
-  validates :symptoms, length: {maximum: 200}
-  validates :medicines, length: {maximum: 200}
-  validates :cares, length: {maximum: 200}
-  validates :annotations, length: {maximum: 400}
+  validates :idx, length: {maximum: 200}
+  validates :tx, length: {maximum: 200}
+  validates :annotations, length: {maximum: 200}
+  validates :fecha, presence: true
   validates :patient_id, presence: true
   
 end

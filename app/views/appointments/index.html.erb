@@ -28,7 +28,7 @@
         <tr>
           <th class="columna-boton-cita"></th>
           <th><%= sort_link(@q, :patient_first_name, 'Nombre del Paciente') %></th>
-          <th><%= sort_link(@q, :created_at, 'Fecha de la Cita') %></th>
+          <th><%= sort_link(@q, :fecha, 'Fecha de la Cita') %></th>
         </tr>
       </thead>
       <tbody>
@@ -41,7 +41,7 @@
             <td><%= link_to appointment.patient.first_name + " " + appointment.patient.last_name, patient_path(appointment.patient_id) %></td>
             <!-- Afortunadamente, patient.created_at se refiere a la fecha de la creacion de la cita y no de la
                  creacion del paciente. -->
-            <td><%= l appointment.created_at, format: :long %></td>
+            <td><%= l appointment.fecha, format: :long %></td>
           </tr>
         <% end %>
       </tbody>
