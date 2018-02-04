@@ -1,3 +1,5 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/locale/es.js"></script>
+
 <%= render 'layouts/navbar' %>
 
 <div class="row">
@@ -55,7 +57,7 @@
           <%= f.label :fecha %>
         </div>
         <div class="col-sm-7">
-          <%= f.text_field :fecha, class: "datetimepicker" %>
+          <%= f.text_field :fecha, class: "datetimepicker", :value=> @appointment.fecha.strftime('%d/%m/%Y %I:%M %p') %>
         </div>
       </div>
       
