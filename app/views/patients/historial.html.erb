@@ -29,7 +29,7 @@
               <%= link_to '<i class="fa fa-eye" aria-hidden="true"></i>'.html_safe, anamnesi_path(patient), 
                   class:"btn btn-success btn-xs boton-cita", title: "Ver informacion de la consulta" %>
             </td>
-            <td><%= link_to patient.patient.first_name + " " + patient.patient.last_name, patient_path(patient) %></td>
+            <td><%= link_to patient.patient.first_name + " " + patient.patient.last_name, patient_path(patient.patient) %></td>
             <!-- Afortunadamente, patient.created_at se refiere a la fecha de la creacion de la cita y no de la
                  creacion del paciente. -->
             <td><%= l patient.created_at, format: :long %></td>
